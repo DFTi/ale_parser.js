@@ -1,11 +1,11 @@
-/* Takes a string `buffer` and evaluates the heading, column, and data
- * exposing these as JSON for consumption by your application */
+/* Takes a string `buffer` to parse and expose the heading, column, and data
+ * Avid Log Exchange sections as JSON for easy consumption by your application */
 function AleParser(buffer) {
   this.raw = buffer.toString();
   this.heading = {};
   this.column = [];
   this.data = [];
-  var d = "\t";
+  var d = "\t"; // Default delimiter
 
   /* The following documentation for parseRows and subsequent
    * implementation of CSV parsing are from the csv2json and d3 projects.
@@ -99,6 +99,10 @@ function AleParser(buffer) {
     return rows;
   }
 
+  /* Here's the ALE-specific logic that actually extracts the sections
+   * it makes heavy use of the parseRows method above and can be expanded
+   * pretty easily. I certainly do not claim to know the ALE format so well
+   * but if you have issues, please fork and improve this :) */
   var currentSection;
   var lines = this.raw.split('\n');
   for (var i = 0, l = lines.length; i < l; i ++) {
@@ -136,7 +140,7 @@ function AleParser(buffer) {
 }
 
 
-// Supported in Node.js
+// Support Node.js
 if (typeof(module) !== "undefined")
   module.exports = AleParser;
 
