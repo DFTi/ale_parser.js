@@ -1,0 +1,26 @@
+{
+  "name": "ale_parser.js",
+  "version": "0.0.1",
+  "description": "Avid Log Exchange (ALE) Document Parser in JavaScript",
+  "main": "src/ale_parser.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:DFTi/ale_parser.js"
+  },
+  "keywords": [
+    "ale",
+    "Avid"
+  ],
+  "author": "Keyvan Fatehi",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/DFTi/aleparser.js/issues"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.14.0"
+  }
+}
