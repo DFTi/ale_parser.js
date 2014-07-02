@@ -1,6 +1,6 @@
 {
   "name": "ale_parser.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Avid Log Exchange (ALE) Document Parser in JavaScript",
   "main": "src/ale_parser.js",
   "scripts": {
