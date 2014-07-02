@@ -106,7 +106,7 @@ function AleParser(buffer) {
   var currentSection;
   var lines = this.raw.split('\n');
   for (var i = 0, l = lines.length; i < l; i ++) {
-    var line = lines[i];
+    var line = lines[i].replace(/^\s+|\s+$/g, '');
     if (line == "Heading")
       currentSection = line;
     else if (line == "Column")
