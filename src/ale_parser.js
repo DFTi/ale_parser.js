@@ -104,7 +104,7 @@ function AleParser(buffer) {
    * pretty easily. I certainly do not claim to know the ALE format so well
    * but if you have issues, please fork and improve this :) */
   var currentSection;
-  var lines = this.raw.split('\n');
+  var lines = this.raw.match(/[^\r\n]+/g);
   for (var i = 0, l = lines.length; i < l; i ++) {
     var line = lines[i].replace(/^\s+|\s+$/g, '');
     if (line == "Heading")
